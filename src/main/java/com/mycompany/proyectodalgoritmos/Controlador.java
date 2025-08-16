@@ -4,6 +4,8 @@
  */
 package com.mycompany.proyectodalgoritmos;
 
+import java.util.Arrays;
+
 public class Controlador {
 
     public boolean compararArreglos(int[] arreglo1, int[] arreglo2) {
@@ -34,6 +36,11 @@ public class Controlador {
 
         }
 
+    }
+    public static void ordenar (int[]arreglo1, int [] arreglo2, int[] arreglo3){
+        Arrays.sort(arreglo1);
+        Arrays.sort(arreglo2);
+        Arrays.sort(arreglo3);
     }
 
 }
