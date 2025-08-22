@@ -9,7 +9,7 @@ package algoritmosproyecto;
  * @author cvdia
  */
 public class Controlador {
-      // Método de ordenación interna: BURBUJA
+    
     public static void ordenar(int[] arreglo1, int[] arreglo2, int[] arreglo3) {
         burbuja(arreglo1);
         burbuja(arreglo2);
