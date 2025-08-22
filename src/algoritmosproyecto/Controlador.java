@@ -4,13 +4,32 @@
  */
 package algoritmosproyecto;
 
-import java.util.Arrays;
-
 /**
  *
  * @author cvdia
  */
 public class Controlador {
+      // Método de ordenación interna: BURBUJA
+    public static void ordenar(int[] arreglo1, int[] arreglo2, int[] arreglo3) {
+        burbuja(arreglo1);
+        burbuja(arreglo2);
+        burbuja(arreglo3);
+    }
+
+    // Implementación de Burbuja
+    private static void burbuja(int[] arreglo) {
+        int n = arreglo.length;
+        for (int i = 0; i < n - 1; i++) {
+            for (int j = 0; j < n - i - 1; j++) {
+                if (arreglo[j] > arreglo[j + 1]) {
+                    // Intercambiar
+                    int temp = arreglo[j];
+                    arreglo[j] = arreglo[j + 1];
+                    arreglo[j + 1] = temp;
+                }
+            }
+        }
+    }
      public boolean compararArreglos(int[] arreglo1, int[] arreglo2) {
         boolean sonIguales = true;
 
@@ -40,9 +59,6 @@ public class Controlador {
         }
 
     }
-    public static void ordenar (int[]arreglo1, int [] arreglo2, int[] arreglo3){
-        Arrays.sort(arreglo1);
-        Arrays.sort(arreglo2);
-        Arrays.sort(arreglo3);
-    }
+
+  
 }
