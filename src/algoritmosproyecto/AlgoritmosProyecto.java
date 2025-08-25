@@ -17,17 +17,24 @@ public class AlgoritmosProyecto {
         int[] vector2 = {2, 5, 9, 0, 1, 4, 3};
         int[] vector3 = {2, 5, 6, 8, 9, 4, 3};
         
-        Controlador.ordenarburbuja(vector1, vector2, vector3);
-        System.out.println("Vectores ordenados por método burbuja:");
+        Controlador.ordenarBurbuja(vector1, vector2, vector3);
+        System.out.println("===Vectores ordenados por método burbuja===");
         System.out.println(Arrays.toString(vector1));
         System.out.println(Arrays.toString(vector2));
         System.out.println(Arrays.toString(vector3));
         
-        Controlador.ordenarseleccion(vector1, vector2, vector3);
-        System.out.println("Vectores ordenados por método Selección:");
+        Controlador.ordenarSeleccion(vector1, vector2, vector3);
+        System.out.println("===Vectores ordenados por método Selección===");
         System.out.println(Arrays.toString(vector1));
         System.out.println(Arrays.toString(vector2));
         System.out.println(Arrays.toString(vector3));
+        
+        Controlador.ordenarInserccion(vector1, vector2, vector3);
+        System.out.println("=== Vectores ordenados con Inserción ===");
+        System.out.println(Arrays.toString(vector1));
+        System.out.println(Arrays.toString(vector2));
+        System.out.println(Arrays.toString(vector3));
+
          
         Controlador objControlador = new Controlador();
         String respuesta = objControlador.compararArreglos(vector1, vector2)

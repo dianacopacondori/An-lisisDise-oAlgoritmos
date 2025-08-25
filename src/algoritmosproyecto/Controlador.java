@@ -11,7 +11,7 @@ package algoritmosproyecto;
 public class Controlador {
     
     // Implementación de Burbuja
-    public static void ordenarburbuja(int[] arreglo1, int[] arreglo2, int[] arreglo3) {
+    public static void ordenarBurbuja(int[] arreglo1, int[] arreglo2, int[] arreglo3) {
         burbuja(arreglo1);
         burbuja(arreglo2);
         burbuja(arreglo3);
@@ -22,7 +22,6 @@ public class Controlador {
         for (int i = 0; i < n - 1; i++) {
             for (int j = 0; j < n - i - 1; j++) {
                 if (arreglo[j] > arreglo[j + 1]) {
-                    // Intercambiar
                     int temp = arreglo[j];
                     arreglo[j] = arreglo[j + 1];
                     arreglo[j + 1] = temp;
@@ -31,7 +30,7 @@ public class Controlador {
         }
     }
         // Método de ordenación interna: SELECCIÓN
-    public static void ordenarseleccion(int[] arreglo1, int[] arreglo2, int[] arreglo3) {
+    public static void ordenarSeleccion(int[] arreglo1, int[] arreglo2, int[] arreglo3) {
         seleccion(arreglo1);
         seleccion(arreglo2);
         seleccion(arreglo3);
@@ -41,7 +40,6 @@ public class Controlador {
         int n = arreglo.length;
 
         for (int i = 0; i < n - 1; i++) {
-            // Encontrar el índice del mínimo en el resto del arreglo
             int minIndex = i;
             for (int j = i + 1; j < n; j++) {
                 if (arreglo[j] < arreglo[minIndex]) {
@@ -54,7 +52,27 @@ public class Controlador {
             arreglo[i] = temp;
         }
     }
+     // Método de ordenación interna: INSERCIÓN
+    public static void ordenarInserccion(int[] arreglo1, int[] arreglo2, int[] arreglo3) {
+        insercion(arreglo1);
+        insercion(arreglo2);
+        insercion(arreglo3);
+    }
 
+    private static void insercion(int[] arreglo) {
+        int n = arreglo.length;
+        for (int i = 1; i < n; i++) {
+            int clave = arreglo[i];
+            int j = i - 1;
+
+            // Mover elementos mayores que "clave" una posición a la derecha
+            while (j >= 0 && arreglo[j] > clave) {
+                arreglo[j + 1] = arreglo[j];
+                j = j - 1;
+            }
+            arreglo[j + 1] = clave;
+        }
+    }
      public boolean compararArreglos(int[] arreglo1, int[] arreglo2) {
         boolean sonIguales = true;
 
