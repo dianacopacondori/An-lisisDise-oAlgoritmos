@@ -30,7 +30,7 @@ public class Controlador {
         }
     }
         // Método de ordenación interna: SELECCIÓN
-    public static void ordenarSeleccion(int[] arreglo1, int[] arreglo2, int[] arreglo3) {
+    public static void ordenarSelecion(int[] arreglo1, int[] arreglo2, int[] arreglo3) {
         seleccion(arreglo1);
         seleccion(arreglo2);
         seleccion(arreglo3);
