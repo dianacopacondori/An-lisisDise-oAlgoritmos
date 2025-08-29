@@ -4,9 +4,13 @@
  */
 package algoritmosproyecto;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.Arrays;
 import java.util.Scanner;
-
 
 public class AlgoritmosProyecto {
 
@@ -17,7 +21,7 @@ public class AlgoritmosProyecto {
 
         Scanner sc = new Scanner(System.in);
         System.out.println("Ingrese el número del método de ordenación:");
-        System.out.println("1. Burbuja\n2. Selección\n3. Inserción\n");
+        System.out.println("1. Burbuja\n2. Selección\n3. Inserción\n4. Ordenación externa");
         int opcion = sc.nextInt();
 
         switch (opcion) {
@@ -27,18 +31,48 @@ public class AlgoritmosProyecto {
                 break;
             case 2:
                 Controlador.ordenarSelecion(vector1, vector2, vector3);
-                 System.out.println("Método elegido: SELECCIÓN");
+                System.out.println("Método elegido: SELECCIÓN");
                 break;
             case 3:
                 Controlador.ordenarInserccion(vector1, vector2, vector3);
-                 System.out.println("Método elegido: INSERCIÓN");
+                System.out.println("Método elegido: INSERCIÓN");
+                break;
+            case 4:
+                try {
+                    File archivoEntrada = new File("datos.txt");
+                    File archivoSalida = new File("resultado.txt");
+
+                    // Crear archivo de ejemplo con números desordenados
+                    PrintWriter pw = new PrintWriter(archivoEntrada);
+                    pw.println("50");
+                    pw.println("12");
+                    pw.println("75");
+                    pw.println("30");
+                    pw.println("4");
+                    pw.close();
+
+                    // Llamar al método de ordenación externa
+                    OrdenacionExterna.ordenarArchivo(archivoEntrada, archivoSalida);
+
+                    // Leer archivo ordenado
+                    System.out.println("Archivo ordenado (ordenado.txt):");
+                    BufferedReader br = new BufferedReader(new FileReader(archivoSalida));
+                    String linea;
+                    while ((linea = br.readLine()) != null) {
+                        System.out.println(linea);
+                    }
+                    br.close();
+
+                } catch (IOException e) {
+                    System.out.println("Error en la ordenación externa: " + e.getMessage());
+                }
                 break;
             default:
                 System.out.println("Opción no válida");
                 break;
         }
-        
-         System.out.println("\nVectores ordenados:");
+
+        System.out.println("\nVectores ordenados:");
         System.out.println("Vector 1: " + Arrays.toString(vector1));
         System.out.println("Vector 2: " + Arrays.toString(vector2));
         System.out.println("Vector 3: " + Arrays.toString(vector3));
