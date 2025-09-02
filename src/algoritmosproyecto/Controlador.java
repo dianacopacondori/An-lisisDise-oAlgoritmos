@@ -30,7 +30,7 @@ public class Controlador {
         }
     }
         // Método de ordenación interna: SELECCIÓN
-    public static void ordenarSelecion(int[] arreglo1, int[] arreglo2, int[] arreglo3) {
+    public static void ordenarSeleccion(int[] arreglo1, int[] arreglo2, int[] arreglo3) {
         seleccion(arreglo1);
         seleccion(arreglo2);
         seleccion(arreglo3);
@@ -54,12 +54,12 @@ public class Controlador {
     }
      // Método de ordenación interna: INSERCIÓN
     public static void ordenarInserccion(int[] arreglo1, int[] arreglo2, int[] arreglo3) {
-        insercion(arreglo1);
-        insercion(arreglo2);
-        insercion(arreglo3);
+        inserccion(arreglo1);
+        inserccion(arreglo2);
+        inserccion(arreglo3);
     }
 
-    private static void insercion(int[] arreglo) {
+    private static void inserccion(int[] arreglo) {
         int n = arreglo.length;
         for (int i = 1; i < n; i++) {
             int clave = arreglo[i];

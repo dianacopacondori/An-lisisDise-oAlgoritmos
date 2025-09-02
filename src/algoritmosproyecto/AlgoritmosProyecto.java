@@ -15,32 +15,32 @@ import java.util.Scanner;
 public class AlgoritmosProyecto {
 
     public static void main(String[] args) {
-        int[] vector1 = {2, 5, 6, 8, 9, 4, 3};
-        int[] vector2 = {2, 5, 9, 0, 1, 4, 3};
-        int[] vector3 = {2, 5, 6, 8, 9, 4, 3};
+        int[] vector1 = {2, 5, 6, 8, 9, 4, 3, 11};
+        int[] vector2 = {2, 5, 9, 0, 1, 4, 3, 10, 12};
+        int[] vector3 = {2, 5, 6, 8, 9, 4, 3, 11};
 
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Ingrese el número del método de ordenación:");
-        System.out.println("1. Burbuja\n2. Selección\n3. Inserción\n4. Ordenación externa");
-        int opcion = sc.nextInt();
+        Scanner consola = new Scanner(System.in);
+        System.out.println("Ingrese el numero del metodo de ordenacion:");
+        System.out.println("1. Burbuja\n2. Seleccion\n3. Insercion\n4. Ordenacion externa");
+        int opcion = consola.nextInt();
 
         switch (opcion) {
             case 1:
                 Controlador.ordenarBurbuja(vector1, vector2, vector3);
-                System.out.println("Método elegido: BURBUJA");
+                System.out.println("Metodo elegido: BURBUJA");
                 break;
             case 2:
-                Controlador.ordenarSelecion(vector1, vector2, vector3);
-                System.out.println("Método elegido: SELECCIÓN");
+                Controlador.ordenarSeleccion(vector1, vector2, vector3);
+                System.out.println("Metodo elegido: SELECCIÓN");
                 break;
             case 3:
                 Controlador.ordenarInserccion(vector1, vector2, vector3);
-                System.out.println("Método elegido: INSERCIÓN");
+                System.out.println("Metodo elegido: INSERCIÓN");
                 break;
             case 4:
                 try {
                     File archivoEntrada = new File("datos.txt");
-                    File archivoSalida = new File("resultado.txt");
+                    File archivoSalida = new File("ordenado.txt");
 
                     // Crear archivo de ejemplo con números desordenados
                     PrintWriter pw = new PrintWriter(archivoEntrada);
@@ -48,13 +48,27 @@ public class AlgoritmosProyecto {
                     pw.println("12");
                     pw.println("75");
                     pw.println("30");
+                    pw.println("42");
+                    pw.println("88");
+                    pw.println("7");
+                    pw.println("61");
+                    pw.println("27");
+                    pw.println("92");
+                    pw.println("14");
+                    pw.println("59");
+                    pw.println("70");
+                    pw.println("21");
+                    pw.println("44");
+                    pw.println("99");
+                    pw.println("78");
+                    pw.println("57");
+                    pw.println("1");
                     pw.println("4");
+                    pw.println("43");
                     pw.close();
 
-                    // Llamar al método de ordenación externa
                     OrdenacionExterna.ordenarArchivo(archivoEntrada, archivoSalida);
 
-                    // Leer archivo ordenado
                     System.out.println("Archivo ordenado (ordenado.txt):");
                     BufferedReader br = new BufferedReader(new FileReader(archivoSalida));
                     String linea;
@@ -64,7 +78,7 @@ public class AlgoritmosProyecto {
                     br.close();
 
                 } catch (IOException e) {
-                    System.out.println("Error en la ordenación externa: " + e.getMessage());
+                    System.out.println("Error en la ordenacion externa: " + e.getMessage());
                 }
                 break;
             default:
@@ -72,6 +86,7 @@ public class AlgoritmosProyecto {
                 break;
         }
 
+        if (opcion != 4){
         System.out.println("\nVectores ordenados:");
         System.out.println("Vector 1: " + Arrays.toString(vector1));
         System.out.println("Vector 2: " + Arrays.toString(vector2));
@@ -88,6 +103,8 @@ public class AlgoritmosProyecto {
                 ? "SON IGUALES" : "SON DIFERENTES";
         System.out.println("Arreglo 1 y Arreglo 3 :" + respuesta);
         objControlador.imprimeDistintos(vector1, vector3);
+        }
+        consola.close();
     }
 
 }
