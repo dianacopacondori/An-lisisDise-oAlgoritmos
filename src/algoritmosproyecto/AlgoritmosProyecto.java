@@ -71,7 +71,7 @@ public class AlgoritmosProyecto {
                     switch (externo) {
                         case 1: {
                             // Mezcla Natural
-                           NaturalMergeSort.ordenar(entrada, salida);
+                            NaturalMergeSort.ordenar(entrada, salida);
                             System.out.println("Mezcla Natural completada. Revisa 'ordenado.txt'");
                         }
                         case 2: {
@@ -94,6 +94,11 @@ public class AlgoritmosProyecto {
                                 System.out.println(linea);
                             }
                             br.close();
+                        }
+                        case 5: {
+                            // Mezcla Natural
+                            OrdenacionExterna.NaturalMergeSort(entrada, salida);
+                            System.out.println("Mezcla Natural completada. Revisa 'ordenado.txt'");
                         }
                         default:
                             System.out.println("Opción no válida.");
