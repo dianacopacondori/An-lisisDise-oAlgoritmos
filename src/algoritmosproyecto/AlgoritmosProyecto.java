@@ -71,20 +71,29 @@ public class AlgoritmosProyecto {
                     switch (externo) {
                         case 1: {
                             // Mezcla Natural
-                            NaturalMergeSort.ordenar(entrada, salida);
+                            OrdenacionExterna.NaturalMergeSort(entrada, salida);
                             System.out.println("Mezcla Natural completada. Revisa 'ordenado.txt'");
+
                         }
                         case 2: {
+                            // Mezcla Natural
+                            NaturalMergeSort.ordenar(entrada, salida);
+                            System.out.println("Mezcla Natural completada. Revisa 'ordenado.txt'");
+
+                        }
+                        case 3: {
                             // Mezcla Equilibrada Múltiple
                             MezclaEquilibradaMultiple.ordenar(entrada, salida, 3);
                             System.out.println("Mezcla Equilibrada Múltiple completada. Revisa 'ordenado.txt'");
+
                         }
-                        case 3: {
+                        case 4: {
                             // Método Polifásico
                             OrdenacionPolifasica.ordenar(entrada, salida, 3);
                             System.out.println("Ordenación Polifásica completada. Revisa 'ordenado.txt'");
+
                         }
-                        case 4: {
+                        case 5: {
                             // Versión simple con Collections.sort
                             OrdenacionExterna.ordenarArchivo(entrada, salida);
                             System.out.println("Archivo ordenado con Collections.sort (ordenado.txt):");
@@ -94,11 +103,6 @@ public class AlgoritmosProyecto {
                                 System.out.println(linea);
                             }
                             br.close();
-                        }
-                        case 5: {
-                            // Mezcla Natural
-                            OrdenacionExterna.NaturalMergeSort(entrada, salida);
-                            System.out.println("Mezcla Natural completada. Revisa 'ordenado.txt'");
                         }
                         default:
                             System.out.println("Opción no válida.");
