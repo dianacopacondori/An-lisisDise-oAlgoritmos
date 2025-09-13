@@ -39,7 +39,7 @@ public class OrdenacionExterna {
         pw.close();
     }
 
-    static void NaturalMergeSort(File entrada, File salida) {
+    static void mezclaDirecta(File entrada, File salida) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 }

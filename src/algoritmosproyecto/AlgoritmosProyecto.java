@@ -58,10 +58,11 @@ public class AlgoritmosProyecto {
                 break;
             case 2:
                 System.out.println("=== ORDENACIÓN EXTERNA ===");
-                System.out.println("1. Mezcla Natural");
-                System.out.println("2. Mezcla Equilibrada Múltiple");
-                System.out.println("3. Método Polifásico");
-                System.out.println("4. Ordenación externa simple (Collections.sort)");
+                System.out.println("1. Mezcla Simple");
+                System.out.println("2. Mezcla Natural");
+                System.out.println("3. Mezcla Equilibrada Múltiple");
+                System.out.println("4. Método Polifásico");
+                System.out.println("5. Ordenación externa simple (Collections.sort)");
                 int externo = consola.nextInt();
 
                 try {
@@ -70,10 +71,9 @@ public class AlgoritmosProyecto {
 
                     switch (externo) {
                         case 1: {
-                            // Mezcla Natural
-                            OrdenacionExterna.NaturalMergeSort(entrada, salida);
-                            System.out.println("Mezcla Natural completada. Revisa 'ordenado.txt'");
-
+                            // Mezcla Simple (Direct Merge Sort)
+                            OrdenacionExterna.mezclaDirecta(entrada, salida);
+                            System.out.println("Mezcla Simple completada. Revisa 'ordenado.txt'");
                         }
                         case 2: {
                             // Mezcla Natural
