@@ -4,6 +4,8 @@
  */
 package algoritmobusqueda;
 
+import java.util.Scanner;
+
 /**
  *
  * @author cvdia
@@ -11,7 +13,18 @@ package algoritmobusqueda;
 public class AlgoritmoBusqueda {
     public static void main(String[] args) {
        tablaHashChaining tabla = new tablaHashChaining(5);
-       
+       Scanner sc = new Scanner(System.in);
+        boolean salir = false;
+
+        while (!salir) {
+            System.out.println("\n=== MENÚ TABLAS HASH ===");
+            System.out.println("1. Chaining");
+            System.out.println("2. Open Addressing (Linear Probing)");
+            System.out.println("3. Open Addressing (Quadratic Probing)");
+            System.out.println("4. Salir");
+            System.out.print("Elige una opción: ");
+            int opcion = sc.nextInt();
+
         tabla.insertar(new Estudiante(1, "Andre Alexandro", "Barrera Carranza"));
         tabla.insertar(new Estudiante(6, "Cesar Andres", "Orizabal Gonzales"));
         tabla.insertar(new Estudiante(11, "Julio Alejandro", "Estrada Sotto"));
