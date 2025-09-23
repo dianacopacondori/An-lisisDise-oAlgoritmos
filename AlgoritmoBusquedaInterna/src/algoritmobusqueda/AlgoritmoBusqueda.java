@@ -38,3 +38,4 @@ public class AlgoritmoBusqueda {
         System.out.println("Buscar ID 11: "+ tabla.buscar(11));
     }  
 }
+}
