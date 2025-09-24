@@ -8,10 +8,10 @@ import java.util.*;
  *
  * @author cvdia
  */
-public class tablaHashChaining {
+public class TablaHashChaining {
      private LinkedList<Estudiante>[] tabla;
      
-    public tablaHashChaining(int tamaño) {
+    public TablaHashChaining(int tamaño) {
         tabla = new LinkedList[tamaño];
         for (int i = 0; i < tamaño; i++) {
             tabla[i] = new LinkedList<>();
