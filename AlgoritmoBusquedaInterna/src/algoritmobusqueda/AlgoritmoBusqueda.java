@@ -17,7 +17,7 @@ public class AlgoritmoBusqueda {
         boolean salir = false;
 
         while (!salir) {
-            System.out.println("\n=== MENÚ TABLAS HASH ===");
+            System.out.println("\n=== MENU TABLAS HASH ===");
             System.out.println("1. Chaining");
             System.out.println("2. Open Addressing (Linear Probing)");
             System.out.println("3. Open Addressing (Quadratic Probing)");
@@ -30,14 +30,14 @@ public class AlgoritmoBusqueda {
                     hash.insertar(new Estudiante(1, "Ana",""));
                     hash.insertar(new Estudiante(6, "Luis",""));
                     hash.insertar(new Estudiante(11, "Carla",""));
-                    System.out.println("\n📌 Hash con Chaining:");
+                    System.out.println("\n Hash con Chaining:");
                     hash.mostrar();
                     System.out.println("Buscar ID 6: " + hash.buscar(6));
      
                     hash.mostrar();
                 }
                 default:
-                    System.out.println("⚠ Opción no válida.");
+                    System.out.println(" Opción no válida.");
             }
         tabla.insertar(new Estudiante(1, "Andre Alexandro", "Barrera Carranza"));
         tabla.insertar(new Estudiante(6, "Cesar Andres", "Orizabal Gonzales"));
