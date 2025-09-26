@@ -41,7 +41,7 @@ public class HashOpenAddressing {
                 return;
             }
         }
-        System.out.println("⚠ Tabla llena, no se pudo insertar: " + e);
+        System.out.println(" Tabla llena, no se pudo insertar: " + e);
     }
 
     public Estudiante buscar(int id) {
