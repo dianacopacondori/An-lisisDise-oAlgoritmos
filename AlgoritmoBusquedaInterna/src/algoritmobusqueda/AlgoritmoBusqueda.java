@@ -36,6 +36,18 @@ public class AlgoritmoBusqueda {
      
                     hash.mostrar();
                 }
+                case 2: {
+                    HashOpenAddressing hash = new HashOpenAddressing(7, "linear");
+                    hash.insertar(new Estudiante(1, "Pedro", ""));
+                    hash.insertar(new Estudiante(8, "Sofía",""));
+                    hash.insertar(new Estudiante(15, "Diego",""));
+                    System.out.println("\n📌 Hash con Linear Probing:");
+                    hash.mostrar();
+                    System.out.println("Buscar ID 15: " + hash.buscar(15));
+                    hash.eliminar(15);
+                    System.out.println("Después de eliminar ID 15:");
+                    hash.mostrar();
+                }
                 default:
                     System.out.println(" Opción no válida.");
             }
