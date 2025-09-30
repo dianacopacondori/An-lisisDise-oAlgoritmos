@@ -27,14 +27,15 @@ public class AlgoritmoBusqueda {
                  switch (opcion) {
                 case 1: {
                     TablaHashChaining hash = new TablaHashChaining(5);
-                    hash.insertar(new Estudiante(1, "Ana",""));
-                    hash.insertar(new Estudiante(6, "Luis",""));
-                    hash.insertar(new Estudiante(11, "Carla",""));
+                    hash.insertar(1, new Estudiante(1, "Ana", "Pérez"));
+                    hash.insertar(6, new Estudiante(6, "Luis", "García"));
+                    hash.insertar(11, new Estudiante(11, "Carla", "Martínez"));
                     System.out.println("\n Hash con Chaining:");
                     hash.mostrar();
                     System.out.println("Buscar ID 6: " + hash.buscar(6));
      
                     hash.mostrar();
+                    break;
                 }
                 case 2: {
                     HashOpenAddressing hash = new HashOpenAddressing(7, "linear");
@@ -47,21 +48,27 @@ public class AlgoritmoBusqueda {
                     hash.eliminar(15);
                     System.out.println("Después de eliminar ID 15:");
                     hash.mostrar();
+                    break;
                 }
+                case 3: {
+                    HashOpenAddressing hash = new HashOpenAddressing(7, "quadratic");
+                    hash.insertar(new Estudiante(1, "Marta",""));
+                    hash.insertar(new Estudiante(8, "Andrés",""));
+                    hash.insertar(new Estudiante(15, "Clara",""));
+                    System.out.println("\n📌 Hash con Quadratic Probing:");
+                    hash.mostrar();
+                    System.out.println("Buscar ID 8: " + hash.buscar(8));
+                    hash.eliminar(8);
+                    System.out.println("Después de eliminar ID 8:");
+                    hash.mostrar();
+                    break;
+                }
+                case 4: salir = true;
+                break;
                 default:
                     System.out.println(" Opción no válida.");
             }
-        tabla.insertar(new Estudiante(1, "Andre Alexandro", "Barrera Carranza"));
-        tabla.insertar(new Estudiante(6, "Cesar Andres", "Orizabal Gonzales"));
-        tabla.insertar(new Estudiante(11, "Julio Alejandro", "Estrada Sotto"));
-        tabla.insertar(new Estudiante(2, "Madelaine Giselle", "Villatoro Martinez"));
-        tabla.insertar(new Estudiante(7, "Jose Javier", "Jimenez de la Cruz"));
-
-        tabla.mostrar();
-
-        System.out.println("\nBuscar ID 6: " + tabla.buscar(6));
-        System.out.println("Buscar ID 15: " + tabla.buscar(15));
-        System.out.println("Buscar ID 11: "+ tabla.buscar(11));
+        
     }  
 }
 }
