@@ -42,7 +42,7 @@ public class AlgoritmoBusqueda {
                     hash.insertar(new Estudiante(1, "Pedro", ""));
                     hash.insertar(new Estudiante(8, "Sofía",""));
                     hash.insertar(new Estudiante(15, "Diego",""));
-                    System.out.println("\n📌 Hash con Linear Probing:");
+                    System.out.println("\n Hash con Linear Probing:");
                     hash.mostrar();
                     System.out.println("Buscar ID 15: " + hash.buscar(15));
                     hash.eliminar(15);
@@ -55,7 +55,7 @@ public class AlgoritmoBusqueda {
                     hash.insertar(new Estudiante(1, "Marta",""));
                     hash.insertar(new Estudiante(8, "Andrés",""));
                     hash.insertar(new Estudiante(15, "Clara",""));
-                    System.out.println("\n📌 Hash con Quadratic Probing:");
+                    System.out.println("\n Hash con Quadratic Probing:");
                     hash.mostrar();
                     System.out.println("Buscar ID 8: " + hash.buscar(8));
                     hash.eliminar(8);
