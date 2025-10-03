@@ -110,15 +110,8 @@ public class AlgoritmosProyecto {
                                 System.out.print("Ingresa el número a buscar: ");
                                 int clave = consola.nextInt();
 
-                                System.out.println("1. Secuencial\n2. Binaria");
-                                int tipo = consola.nextInt();
-
-                                boolean encontrado = false;
-                                if (tipo == 1) {
-                                    encontrado = BusquedaExterna.busquedaSecuencial(archivo, clave);
-                                } else if (tipo == 2) {
-                                    encontrado = BusquedaExterna.busquedaBinaria(archivo, clave);
-                                }
+                                    encontrado = BusquedaExterna.busquedaExternaReal(archivo, clave);
+                                
 
                                 if (encontrado) {
                                     System.out.println("El número " + clave + " fue encontrado en el archivo.");
