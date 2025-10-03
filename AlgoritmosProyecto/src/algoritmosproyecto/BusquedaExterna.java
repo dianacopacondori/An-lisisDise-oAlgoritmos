@@ -13,40 +13,30 @@ import java.util.*;
  */
 public class BusquedaExterna {
 
-    // Búsqueda secuencial en archivo
-    public static boolean busquedaSecuencial(File archivo, int clave) throws IOException {
-        try (BufferedReader br = new BufferedReader(new FileReader(archivo))) {
-            String linea;
-            while ((linea = br.readLine()) != null) {
-                int valor = Integer.parseInt(linea);
+     // Supone que el archivo binario contiene enteros (4 bytes cada uno), ordenados
+    public static boolean busquedaBinariaExterna(File archivo, int clave) throws IOException {
+        try (RandomAccessFile raf = new RandomAccessFile(archivo, "r")) {
+            long tamanoArchivo = raf.length();
+            if (tamanoArchivo == 0) return false;
+
+            int numRegistros = (int) (tamanoArchivo / 4); // 4 bytes por int
+            int inicio = 0;
+            int fin = numRegistros - 1;
+
+            while (inicio <= fin) {
+                int medio = inicio + (fin - inicio) / 2;
+                raf.seek(medio * 4L); // Saltar a la posición del medio
+                int valor = raf.readInt();
+
                 if (valor == clave) {
-                    br.close();
-                    return true; // encontrado
+                    return true;
+                } else if (valor < clave) {
+                    inicio = medio + 1;
+                } else {
+                    fin = medio - 1;
                 }
             }
         }
         return false;
     }
-
-    // Búsqueda binaria en archivo ordenado (si el archivo está ordenado previamente)
-    public static boolean busquedaBinaria(File archivo, int clave) throws IOException {
-        List<Integer> datos = new ArrayList<>();
-        try (BufferedReader br = new BufferedReader(new FileReader(archivo))) {
-            String linea;
-            while ((linea = br.readLine()) != null) {
-                datos.add(Integer.valueOf(linea));
-            }
-        }
-
-        // Buscar en la lista con búsqueda binaria
-        int inicio = 0, fin = datos.size() - 1;
-        while (inicio <= fin) {
-            int mid = (inicio + fin) / 2;
-            if (datos.get(mid) == clave) return true;
-            else if (datos.get(mid) < clave) inicio = mid + 1;
-            else fin = mid - 1;
-        }
-        return false;
-    }
-
 }
