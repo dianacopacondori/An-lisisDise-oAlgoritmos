@@ -110,7 +110,7 @@ public class AlgoritmosProyecto {
                                 System.out.print("Ingresa el número a buscar: ");
                                 int clave = consola.nextInt();
 
-                                    encontrado = BusquedaExterna.busquedaExternaReal(archivo, clave);
+                                    encontrado = BusquedaExterna.busquedaBinariaExterna(archivo, clave);
                                 
 
                                 if (encontrado) {
