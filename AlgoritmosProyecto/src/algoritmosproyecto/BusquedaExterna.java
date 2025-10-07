@@ -7,13 +7,9 @@ package algoritmosproyecto;
 import java.io.*;
 import java.util.*;
 
-/**
- *
- * @author cvdia
- */
 public class BusquedaExterna {
 
-     // Supone que el archivo binario contiene enteros (4 bytes cada uno), ordenados
+     // Supone que el archivo binario contiene enteros, ordenados
     public static boolean busquedaBinariaExterna(File archivo, int clave) throws IOException {
         try (RandomAccessFile raf = new RandomAccessFile(archivo, "r")) {
             long tamanoArchivo = raf.length();
