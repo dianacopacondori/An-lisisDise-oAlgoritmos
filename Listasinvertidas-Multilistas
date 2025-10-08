@@ -1,0 +1,24 @@
+Los algoritmos de búsqueda externa se utilizan cuando los datos a procesar no caben en la memoria principal y deben almacenarse
+en dispositivos de almacenamiento secundario (como discos duros). En este contexto, dos estructuras clave son las listas
+invertidas y las multilistas.
+
+Listas invertidas
+Una lista invertida es una estructura de indexación ampliamente usada en sistemas de recuperación de información 
+(como motores de búsqueda). Consiste en un índice que, para cada término (palabra clave), almacena una lista de 
+identificadores de documentos (o registros) donde ese término aparece. Esta estructura permite responder eficientemente 
+consultas como "¿en qué documentos aparece la palabra X?", minimizando el acceso a disco al evitar recorrer todos los registros.
+Las listas invertidas suelen complementarse con metadatos (como frecuencia del término o posición dentro del documento) para 
+mejorar la relevancia de los resultados.
+
+Multilistas
+Las multilistas son una extensión de las listas enlazadas diseñadas para manejar múltiples criterios de búsqueda simultáneamente.
+En una multilista, cada registro puede pertenecer a varias listas, una por cada atributo indexado. Por ejemplo, en una base de datos
+de empleados, un registro puede estar enlazado tanto en una lista por departamento como en otra por cargo. Esto permite realizar
+búsquedas eficientes sobre distintos campos sin necesidad de escanear toda la base de datos. Sin embargo, su mantenimiento es más 
+complejo, ya que las inserciones y eliminaciones deben actualizarse en todas las listas relevantes.
+
+Conclusión
+Tanto las listas invertidas como las multilistas son técnicas eficaces para optimizar la búsqueda en entornos de almacenamiento
+externo, reduciendo el número de accesos a disco. Las listas invertidas destacan en contextos de texto y recuperación de información,
+mientras que las multilistas son útiles en bases de datos con múltiples atributos de búsqueda. Ambas estructuras buscan equilibrar 
+eficiencia en la consulta con el costo de mantenimiento en entornos con limitaciones de memoria.
