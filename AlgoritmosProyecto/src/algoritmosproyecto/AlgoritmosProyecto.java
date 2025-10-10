@@ -20,14 +20,14 @@ public class AlgoritmosProyecto {
 
         Scanner consola = new Scanner(System.in);
         System.out.println("----MENU----");
-        System.out.println("1. Ordenación interna (vectores)"
+        System.out.println("1. Ordenacion interna (vectores)"
                 + "\n2. Ordenacion externa (archivos)");
         int opcion = consola.nextInt();
 
         switch (opcion) {
             case 1:
-                System.out.println("Elige método interno:");
-                System.out.println("1. Burbuja\n2. Selección\n3. Inserción");
+                System.out.println("Elige metodo interno:");
+                System.out.println("1. Burbuja\n2. Seleccion\n3. Insercion");
                 int interno = consola.nextInt();
                 switch (interno) {
                     case 1:
@@ -37,7 +37,7 @@ public class AlgoritmosProyecto {
                     case 3:
                         Controlador.ordenarInserccion(vector1, vector2, vector3);
                     default:
-                        System.out.println("Opción no válida.");
+                        System.out.println("Opcion no valida.");
                 }
                 System.out.println("\nVectores ordenados:");
                 System.out.println("Vector 1: " + Arrays.toString(vector1));
@@ -57,12 +57,12 @@ public class AlgoritmosProyecto {
                 objControlador.imprimeDistintos(vector1, vector3);
                 break;
             case 2:
-                System.out.println("=== ORDENACIÓN EXTERNA ===");
+                System.out.println("=== ORDENACION EXTERNA ===");
                 System.out.println("1. Mezcla Simple");
                 System.out.println("2. Mezcla Natural");
-                System.out.println("3. Mezcla Equilibrada Múltiple");
-                System.out.println("4. Método Polifásico");
-                System.out.println("5. Ordenación externa simple (Collections.sort)");
+                System.out.println("3. Mezcla Equilibrada Multiple");
+                System.out.println("4. Metodo Polifasico");
+                System.out.println("5. Ordenacion externa simple (Collections.sort)");
                 int externo = consola.nextInt();
 
                 try {
@@ -84,13 +84,13 @@ public class AlgoritmosProyecto {
                         case 3: {
                             // Mezcla Equilibrada Múltiple
                             MezclaEquilibradaMultiple.ordenar(entrada, salida, 3);
-                            System.out.println("Mezcla Equilibrada Múltiple completada. Revisa 'ordenado.txt'");
+                            System.out.println("Mezcla Equilibrada Multiple completada. Revisa 'ordenado.txt'");
 
                         }
                         case 4: {
                             // Método Polifásico
                             OrdenacionPolifasica.ordenar(entrada, salida, 3);
-                            System.out.println("Ordenación Polifásica completada. Revisa 'ordenado.txt'");
+                            System.out.println("Ordenacion Polifasica completada. Revisa 'ordenado.txt'");
 
                         }
                         case 5: {
@@ -107,24 +107,24 @@ public class AlgoritmosProyecto {
                         case 6: // Búsqueda externa
                             try {
                                 File archivo = new File("ordenado.txt"); // archivo generado por ordenación externa
-                                System.out.print("Ingresa el número a buscar: ");
+                                System.out.print("Ingresa el numero a buscar: ");
                                 int clave = consola.nextInt();
 
                                     encontrado = BusquedaExterna.busquedaBinariaExterna(archivo, clave);
                                 
 
                                 if (encontrado) {
-                                    System.out.println("El número " + clave + " fue encontrado en el archivo.");
+                                    System.out.println("El numero " + clave + " fue encontrado en el archivo.");
                                 } else {
-                                    System.out.println("El número " + clave + " NO está en el archivo.");
+                                    System.out.println("El numero " + clave + " NO esta en el archivo.");
                                 }
 
                             } catch (IOException e) {
-                                System.out.println("Error en búsqueda externa: " + e.getMessage());
+                                System.out.println("Error en busqueda externa: " + e.getMessage());
                             }
                             break;
                         default:
-                            System.out.println("Opción no válida.");
+                            System.out.println("Opcion no valida.");
                     }
                 } catch (IOException e) {
                     System.out.println("Error en la ordenación externa: " + e.getMessage());
@@ -132,7 +132,7 @@ public class AlgoritmosProyecto {
                 break;
 
             default:
-                System.out.println("Opción no válida");
+                System.out.println("Opcion no valida");
                 break;
         }
         consola.close();
