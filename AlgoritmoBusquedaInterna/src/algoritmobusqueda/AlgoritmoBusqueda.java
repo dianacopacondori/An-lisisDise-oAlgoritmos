@@ -14,6 +14,68 @@ import java.util.Scanner;
  */
 public class AlgoritmoBusqueda {
 
+    public static void demoInvertedIndex(Scanner sc) {
+    InvertedIndex idx = new InvertedIndex();
+
+    // Simular documentos predefinidos (puedes hacerlo interactivo si quieres)
+    String[][] documentos = {
+        {"el", "gato", "come", "pescado"},
+        {"el", "perro", "come", "carne"},
+        {"los", "peces", "nadan", "en", "el", "agua"}
+    };
+
+    for (int i = 0; i < documentos.length; i++) {
+        for (String palabra : documentos[i]) {
+            idx.addWordToDocument(palabra, i + 1); // IDs de documento: 1, 2, 3...
+        }
+    }
+
+    System.out.println("\n=== LISTA INVERTIDA ===");
+    idx.printIndex();
+
+    System.out.print("\nIngresa una palabra para buscar: ");
+    String palabra = sc.nextLine().trim().toLowerCase();
+    Set<Integer> docs = idx.getDocuments(palabra);
+    if (docs.isEmpty()) {
+        System.out.println("La palabra '" + palabra + "' no se encontró.");
+    } else {
+        System.out.println("Aparece en los documentos: " + docs);
+    }
+    }
+public static void demoMultilist(Scanner sc) {
+    Multilist ml = new Multilist();
+
+    // Agregar empleados predefinidos
+    ml.addEmployee(new Employee(1, "Ana", "IT", "Developer"));
+    ml.addEmployee(new Employee(2, "Luis", "IT", "Manager"));
+    ml.addEmployee(new Employee(3, "Carlos", "HR", "Developer"));
+    ml.addEmployee(new Employee(4, "María", "HR", "Manager"));
+
+    System.out.println("\n=== MULTILISTA (Empleados) ===");
+    System.out.println("Empleados por departamento:");
+    System.out.println("IT: " + ml.getEmployeesByDepartment("IT"));
+    System.out.println("HR: " + ml.getEmployeesByDepartment("HR"));
+
+    System.out.println("\nEmpleados por rol:");
+    System.out.println("Developer: " + ml.getEmployeesByRole("Developer"));
+    System.out.println("Manager: " + ml.getEmployeesByRole("Manager"));
+
+    System.out.print("\n¿Quieres buscar por departamento? (s/n): ");
+    if (sc.nextLine().trim().equalsIgnoreCase("s")) {
+        System.out.print("Ingresa el departamento (ej. IT, HR): ");
+        String dept = sc.nextLine().trim();
+        List<Employee> empDept = ml.getEmployeesByDepartment(dept);
+        System.out.println(empDept.isEmpty() ? "No hay empleados en ese depto." : empDept);
+    }
+
+    System.out.print("¿Quieres buscar por rol? (s/n): ");
+    if (sc.nextLine().trim().equalsIgnoreCase("s")) {
+        System.out.print("Ingresa el rol (ej. Developer, Manager): ");
+        String rol = sc.nextLine().trim();
+        List<Employee> empRol = ml.getEmployeesByRole(rol);
+        System.out.println(empRol.isEmpty() ? "No hay empleados con ese rol." : empRol);
+    }
+}
     public static void main(String[] args) {
         TablaHashChaining tabla = new TablaHashChaining(5);
         Scanner sc = new Scanner(System.in);
