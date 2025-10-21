@@ -1,0 +1,35 @@
+Shell sort
+En lugar de comparar solo elementos adyacentes (como en el insertion sort),
+Shell sort compara elementos separados por una distancia ( o gap )que va disminuyendo
+progresivamente hasta llegar a 1.  
+Esto permite mover elementos grandes hacia el final (o pequeños hacia el
+inicio) mucho más rápido que en el insertion sort clásico.
+
+Características:
+
+- No es estable, puede cambiar el orden relativo de elementos iguales
+- Es in-place, usa memoria constante extra
+- Es adaptativo, mejora con datos parcialmente ordenados
+- La complejidad, depende de la secuencia de gaps
+
+Complejidad temporal :
+- Con gaps (n/2, n/4, ...): **peor caso** ≈ (O(n^2))
+- Con secuencia de Knuth ((1, 4, 13, 40, ...)): ≈ (O(n^{3/2}))
+
+Ventaja clave
+Shell sort reduce el número de movimientos necesarios al "pre-ordenar" 
+el arreglo con gaps grandes, haciendo que el último paso (gap=1) sea muy eficiente
+
+
+Quick Sort (Ordenamiento rápido):
+
+- Divide: Selecciona un pivote y particiona la lista en dos sublistas: 
+  elementos menores y mayores que el pivote.
+- Vence: Ordena recursivamente las dos sublistas.
+- Combina: No requiere un paso explícito de combinación; la lista ya 
+  está ordenada tras las particiones recursivas.
+- Complejidad temporal:  
+  - Promedio: (O(n \log n))
+  - Peor caso: (O(n^2)) (cuando el pivote es siempre el menor o
+    mayor elemento).
+- No estable, pero in-place (usa poca memoria adicional).
