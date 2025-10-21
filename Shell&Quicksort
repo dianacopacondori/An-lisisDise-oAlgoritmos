@@ -1,6 +1,6 @@
 Shell sort
 En lugar de comparar solo elementos adyacentes (como en el insertion sort),
-Shell sort compara elementos separados por una distancia ( o gap )que va disminuyendo
+Shell sort compara elementos separados por una distancia ( o "gap" )que va disminuyendo
 progresivamente hasta llegar a 1.  
 Esto permite mover elementos grandes hacia el final (o pequeños hacia el
 inicio) mucho más rápido que en el insertion sort clásico.
@@ -13,7 +13,7 @@ Características:
 - La complejidad, depende de la secuencia de gaps
 
 Complejidad temporal :
-- Con gaps (n/2, n/4, ...): **peor caso** ≈ (O(n^2))
+- Con gaps (n/2, n/4, ...): *peor caso* ≈ (O(n^2))
 - Con secuencia de Knuth ((1, 4, 13, 40, ...)): ≈ (O(n^{3/2}))
 
 Ventaja clave
