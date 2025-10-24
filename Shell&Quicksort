@@ -16,10 +16,6 @@ Complejidad temporal :
 - Con gaps (n/2, n/4, ...): *peor caso* ≈ (O(n^2))
 - Con secuencia de Knuth ((1, 4, 13, 40, ...)): ≈ (O(n^{3/2}))
 
-Ventaja clave
-Shell sort reduce el número de movimientos necesarios al "pre-ordenar" 
-el arreglo con gaps grandes, haciendo que el último paso (gap=1) sea muy eficiente
-
 
 Quick Sort (Ordenamiento rápido):
 
