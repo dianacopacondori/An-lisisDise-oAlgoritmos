@@ -8,7 +8,7 @@ inicio) mucho más rápido que en el insertion sort clásico.
 Características:
 
 - No es estable, puede cambiar el orden relativo de elementos iguales
-- Es in-place, usa memoria constante extra
+- Es in-place, no requiere memoria adicional significativa
 - Es adaptativo, mejora con datos parcialmente ordenados
 - La complejidad, depende de la secuencia de gaps
 
