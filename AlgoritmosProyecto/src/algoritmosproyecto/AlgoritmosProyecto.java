@@ -15,7 +15,7 @@ public class AlgoritmosProyecto {
 
     public static void main(String[] args) throws IOException {
         int[] vector1 = {2, 5, 6, 8, 9, 4, 3, 11, 17, 15, 19};
-        int[] vector2 = {2, 5, 9, 0, 1, 4, 3, 10, 12, 8, 7};
+        int[] vector2 = {2, 5, 9, 0, 1, 4, 3, 10, 12, 8,
         int[] vector3 = {2, 5, 6, 8, 9, 4, 3, 11, 17, 15, 19};
 
         Scanner consola = new Scanner(System.in);
