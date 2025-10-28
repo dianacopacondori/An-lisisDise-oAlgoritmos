@@ -1,0 +1,14 @@
+Requisito fundamental
+El arreglo debe estar ordenado. Si no lo está, la búsqueda binaria no funciona.
+
+Idea principal
+Divide y vencerás:  
+En cada paso, compara el elemento objetivo con el elemento del medio del rango actual:
+- Si es igual → ¡encontrado!
+- Si el objetivo es menor, busca en la mitad izquierda.
+- Si es mayor, busca en la mitad derecha.
+
+Así, descarta la mitad del espacio de búsqueda en cada iteración.
+
+Complejidad
+Tiempo: O(log n) → porque en cada paso se reduce el problema a la mitad.
