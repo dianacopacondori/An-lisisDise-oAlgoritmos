@@ -29,13 +29,17 @@ public class QuickSort {
             int pivoteIndex = particion(arr, inicio, fin);
 
             // Recursión en la subparte más pequeña, iteración en la más grande
-            if (pivoteIndex - inicio < fin - pivoteIndex) {
-                quickSortRecursive(arr, inicio, pivoteIndex - 1);
-                inicio = pivoteIndex + 1;
-            } else {
-                quickSortRecursive(arr, pivoteIndex + 1, fin);
-                fin = pivoteIndex - 1;
-            }
+         if (pivoteIndex - inicio < fin - pivoteIndex) {
+    // Izquierda es más pequeña → recursión en izquierda
+    quickSortRecursive(arr, inicio, pivoteIndex - 1);
+    // Iterar sobre la derecha: actualizamos 'inicio'
+    inicio = pivoteIndex + 1;
+} else {
+    // Derecha es más pequeña → recursión en derecha
+    quickSortRecursive(arr, pivoteIndex + 1, fin);
+    // Iterar sobre la izquierda: actualizamos 'fin'
+    fin = pivoteIndex - 1;
+         }
         }
     }
 
