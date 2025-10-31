@@ -9,7 +9,7 @@ package semana11ordenacion;
  * @author cvdia
  */
 public class QuickSort {
- public static void quickSort(int[] arr) {
+ public static void quickSort(int[] arr, int par, int par1) {
         if (arr == null || arr.length <= 1) {
             return;
         }
