@@ -3,22 +3,24 @@ en dispositivos de almacenamiento secundario (como discos duros). En este contex
 invertidas y las multilistas.
 
 Listas invertidas
-Una lista invertida es una estructura de indexación ampliamente usada en sistemas de recuperación de información 
-(como motores de búsqueda). Consiste en un índice que, para cada término (palabra clave), almacena una lista de 
-identificadores de documentos (o registros) donde ese término aparece. Esta estructura permite responder eficientemente 
-consultas como "¿en qué documentos aparece la palabra X?", minimizando el acceso a disco al evitar recorrer todos los registros.
-Las listas invertidas suelen complementarse con metadatos (como frecuencia del término o posición dentro del documento) para 
-mejorar la relevancia de los resultados.
+Son una estructura de datos utilizada principalmente en sistemas de recuperación de información (como motores de búsqueda).
+En lugar de almacenar documentos y luego buscar palabras dentro de ellos, almacenan palabras (términos) y, para cada una, una lista de los documentos en los que aparece.
+Cada entrada típica incluye:
+El término (palabra clave).
+Una lista de identificadores de documentos donde aparece.
+Opcionalmente, información adicional como frecuencia del término, posiciones dentro del documento, etc.
+Ventaja: permite búsquedas eficientes por palabra clave.
+Ejemplo:
+Término: "base" → Documentos: [Doc1, Doc3, Doc7]
 
 Multilistas
-Las multilistas son una extensión de las listas enlazadas diseñadas para manejar múltiples criterios de búsqueda simultáneamente.
-En una multilista, cada registro puede pertenecer a varias listas, una por cada atributo indexado. Por ejemplo, en una base de datos
-de empleados, un registro puede estar enlazado tanto en una lista por departamento como en otra por cargo. Esto permite realizar
-búsquedas eficientes sobre distintos campos sin necesidad de escanear toda la base de datos. Sin embargo, su mantenimiento es más 
-complejo, ya que las inserciones y eliminaciones deben actualizarse en todas las listas relevantes.
+Son una generalización de las listas enlazadas donde cada nodo puede pertenecer a más de una lista simultáneamente.
+Se usan cuando los datos tienen múltiples criterios de organización (por ejemplo, por nombre, por fecha, por categoría).
+Cada nodo contiene varios punteros, uno para cada lista a la que pertenece.
+Permiten acceder a los mismos datos desde diferentes perspectivas o índices sin duplicar la información.
+Ejemplo:
+Una base de datos de empleados puede estar organizada en:
 
-Conclusión
-Tanto las listas invertidas como las multilistas son técnicas eficaces para optimizar la búsqueda en entornos de almacenamiento
-externo, reduciendo el número de accesos a disco. Las listas invertidas destacan en contextos de texto y recuperación de información,
-mientras que las multilistas son útiles en bases de datos con múltiples atributos de búsqueda. Ambas estructuras buscan equilibrar 
-eficiencia en la consulta con el costo de mantenimiento en entornos con limitaciones de memoria.
+Una lista por departamento.
+Otra lista por antigüedad.
+El mismo empleado aparece en ambas listas, pero solo existe una copia de sus datos.
