@@ -1,0 +1,22 @@
+RECURSIVIDAD 
+La recursividad es una técnica de programación en la que una función se llama a sí misma para resolver un 
+problema. Cada llamada recursiva trabaja sobre una versión más pequeña del problema original, hasta llegar 
+a un caso base (condición de parada) que no requiere recursión.
+
+Elementos clave:
+- Caso base: Condición que detiene la recursión.
+- Caso recursivo: La función se llama a sí misma con parámetros modificados para avanzar 
+hacia el caso base
+ RECURSIVIDAD INDIRECTA 
+Ocurre cuando una función `A` llama a otra función `B`, y esta, a su vez, llama de nuevo a `A`
+(directa o indirectamente), creando un ciclo de llamadas recursivas entre dos o más funciones.
+
+A diferencia de la recursividad directa —donde una función se llama a sí misma—, en la 
+recursividad indirecta la recursión se distribuye entre varias funciones
+
+2. Backtracking
+
+Definición:
+El backtracking (o retroceso) es una estrategia algorítmica que utiliza recursividad para
+explorar todas las posibles combinaciones o soluciones a un problema, y retrocede (backtracks) 
+cuando se da cuenta de que la solución actual no lleva a un resultado válido.
