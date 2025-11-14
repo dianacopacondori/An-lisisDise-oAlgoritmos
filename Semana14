@@ -1,29 +1,28 @@
-Selección Óptima**
-No basta con encontrar *una* solución factible: queremos la **mejor** según algún criterio (mínima suma, máxima utilidad, mínimo costo, etc.).
+Selección Óptima
+No basta con encontrar una solución factible: queremos la mejor según algún criterio 
+(mínima suma, máxima utilidad, mínimo costo, etc.).
 
 Esto implica:
-- Mantener una **variable global** (o pasada por referencia) con la mejor solución encontrada hasta ahora.
-- Usar **cotas/podas** (pruning): si el mejor valor *posible* desde el estado actual no supera la mejor solución conocida → descartamos esa rama.
+- Mantener una variable global (o pasada por referencia) con la mejor solución encontrada hasta ahora.
+- Usar **cotas/podas** (pruning): si el mejor valor posible desde el estado actual no supera la mejor 
+  solución conocida → descartamos esa rama.
 
----
+Ejemplo Clásico: **Problema de la Mochila 0/1 con Backtracking**
 
-## 🧩 Ejemplo Clásico: **Problema de la Mochila 0/1 con Backtracking**
+Dado un conjunto de objetos con peso `w[i]` y valor `v[i]`, y una capacidad máxima `W`, 
+seleccionar objetos (sin fraccionar) para maximizar el valor total sin exceder `W`.
 
-> Dado un conjunto de objetos con peso `w[i]` y valor `v[i]`, y una capacidad máxima `W`, seleccionar objetos (sin fraccionar) para **maximizar el valor total** sin exceder `W`.
-Ventajas de esta estrategia:**
-- Encuentra la solución *óptima exacta* (a diferencia de heurísticas/greedy).
+Ventajas de esta estrategia:
+- Encuentra la solución óptima exacta.
 - La poda con cota superior reduce drásticamente el espacio de búsqueda.
 
-⚠️ **Desventaja:** en el peor caso sigue siendo exponencial — pero en la práctica es mucho más rápido que fuerza bruta.
+Desventaja: 
+en el peor caso sigue siendo exponencial — pero en la práctica es mucho más rápido que fuerza bruta.
 
----
+Consejos para Diseñar Algoritmos de este Tipo
 
-## 🧠 Consejos para Diseñar Algoritmos de este Tipo
-
-| Elemento | Recomendación |
-|--------|---------------|
-| **Estado** | Representa claramente el progreso: índice actual, peso acumulado, valor acumulado, conjunto seleccionado, etc. |
-| **Caso base** | ¿Cuándo terminamos? ¿Cuándo actualizamos la mejor solución? |
-| **Decisiones** | Enumera opciones válidas (ej: tomar/no tomar, asignar a recurso A/B, etc.). |
-| **Poda** | Usa cotas superiores/inferiores, restricciones, o soluciones greedy previas como límite. |
-| **Optimización** | Ordenar entradas (por valor/peso, costo, etc.) mejora mucho la poda temprana. |
+| Estado       | Representa claramente el progreso: índice actual, peso acumulado, valor acumulado, conjunto seleccionado, etc. |
+| Caso base    | ¿Cuándo terminamos? ¿Cuándo actualizamos la mejor solución? |
+| Decisiones   | Enumera opciones válidas (ej: tomar/no tomar, asignar a recurso A/B, etc.). |
+| Poda         | Usa cotas superiores/inferiores, restricciones, o soluciones greedy previas como límite. |
+| Optimización | Ordenar entradas (por valor/peso, costo, etc.) mejora mucho la poda temprana. |
