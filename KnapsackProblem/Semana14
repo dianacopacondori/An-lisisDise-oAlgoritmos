@@ -12,6 +12,15 @@ Ejemplo Clásico: Problema de la Mochila
 Dado un conjunto de objetos con peso `w[i]` y valor `v[i]`, y una capacidad máxima `W`, 
 seleccionar objetos (sin fraccionar) para maximizar el valor total sin exceder `W`.
 
+      función mochila(i, pesoRestante):
+      si i == número de objetos o pesoRestante == 0 entonces
+      retornar 0
+      si el peso del objeto i es mayor que pesoRestante entonces
+      retornar mochila(i + 1, pesoRestante)
+      incluir = valor del objeto i + mochila(i + 1, pesoRestante - peso del objeto i)
+      excluir = mochila(i + 1, pesoRestante)
+      retornar el máximo de incluir y excluir
+
 Ventajas de esta estrategia:
 - Encuentra la solución óptima exacta.
 - La poda con cota superior reduce drásticamente el espacio de búsqueda.
